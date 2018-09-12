@@ -1,0 +1,7 @@
+app: 
+  name: excel-combine
+  description: ${app.name} 
+server:
+  port: 8080
+
+    

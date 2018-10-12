@@ -19,7 +19,7 @@ import com.rubyren.excelcombine.service.INamingService;
 
 public class NamingServiceImpl implements INamingService {
 	private Map<Database, Map<String, Institution>> map = null;
-	private File file = Paths.get("C:\\Users\\周宁\\Desktop\\新建文件夹1\\InCites 中国大陆机构(914所)-迟诚-by 王燕rev - 任国华rev.xlsx")
+	private File file = Paths.get("/Users/zhouning/workspace/eclipse-rubyren-1/excels/InCites 中国大陆机构(914所)-迟诚-by 王燕rev - 任国华rev.xlsx")
 			.toFile();
 
 	public Map<String, Institution> get(Database database) {

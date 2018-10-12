@@ -39,8 +39,8 @@ public class CombineServiceImpl {
 	private SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
 
 	public void readCsvAndCombine() {
-		Path from = Paths.get("C:\\Users\\周宁\\Desktop\\新建文件夹\\");
-		File to = Paths.get("C:\\Users\\周宁\\Desktop\\新建文件夹1\\INCITES全部学科中国大陆数据" + df.format(new Date()) + ".xlsx")
+		Path from = Paths.get("/Users/zhouning/workspace/eclipse-rubyren-1/excels/incites201810/");
+		File to = Paths.get("/Users/zhouning/workspace/eclipse-rubyren-1/excels/INCITES全部学科中国大陆数据" + df.format(new Date()) + ".xlsx")
 				.toFile();
 		try (Workbook workbook = new SXSSFWorkbook(); FileOutputStream out = new FileOutputStream(to)) {
 
@@ -72,7 +72,7 @@ public class CombineServiceImpl {
 			CSVFormat format = CSVFormat.DEFAULT.withIgnoreEmptyLines(false);
 
 			Map<String, Institution> ins = namingService.get(Database.InCites);
-			Files.walk(from, 1).forEach(f -> {
+			Files.walk(from, 1).sorted().forEach(f -> {
 				if (!Objects.equals(from, f)) {
 					String name = f.getFileName().toString();
 					name = name.substring(0, name.length() - 4);
